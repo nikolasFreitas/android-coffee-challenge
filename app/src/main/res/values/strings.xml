@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Coffee Experiment</string>
+
+    <string name="main_menu_coffee_option">Lista de cafés</string>
+    <string name="main_menu_employee_option">Lista de funcionários</string>
+
+</resources>
