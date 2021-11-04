@@ -6,5 +6,7 @@
     <string name="add_coffee">Add coffee</string>
     <string name="content_description_add_new_coffe">add new coffe</string>
     <string name="empty_list_coffee">Lista vazia adicione um café</string>
+    <string name="input_name">nome</string>
+    <string name="input_roast_level">nível de torreifação</string>
 
 </resources>

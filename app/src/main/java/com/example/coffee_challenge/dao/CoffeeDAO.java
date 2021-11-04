@@ -10,9 +10,12 @@ import java.util.Set;
 
 public class CoffeeDAO {
     final private static Set<Coffee> coffeeList = new HashSet<>();
+    private static int nextId = 0;
 
-    public void add(Coffee coffee) {
+    public int add(Coffee coffee) {
+        coffee.id = nextId;
         coffeeList.add(coffee);
+        return nextId++;
     }
 
     public Optional<Coffee> findById(int coffeeId) {
