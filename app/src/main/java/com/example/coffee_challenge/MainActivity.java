@@ -1,4 +1,4 @@
-package com.example.coffeeexperiment;
+package com.example.coffee_challenge;
 
 import androidx.appcompat.app.AppCompatActivity;
 

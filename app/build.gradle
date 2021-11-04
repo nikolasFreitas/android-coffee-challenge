@@ -6,8 +6,8 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.coffeeexperiment"
-        minSdk 28
+        applicationId "com.example.coffee_challenge"
+        minSdk 27
         targetSdk 31
         versionCode 1
         versionName "1.0"

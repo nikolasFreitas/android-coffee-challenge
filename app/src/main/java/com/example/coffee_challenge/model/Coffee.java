@@ -1,4 +1,4 @@
-package com.example.coffeeexperiment.model;
+package com.example.coffee_challenge.model;
 
 public class Coffee {
     public int id;
