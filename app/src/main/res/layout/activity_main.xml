@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
+        android:contentDescription="Banner de café"
         android:scaleType="fitCenter"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,29 +20,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/coffee_banner" />
 
-    <TextView
-        android:id="@+id/textView_coffee_option"
+    <ListView
+        android:id="@+id/listView_main_menu"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:paddingHorizontal="15dp"
-        android:paddingVertical="10dp"
-        android:text="@string/main_menu_coffee_option"
-        android:textSize="20sp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <TextView
-        android:id="@+id/textView_employees_option"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:lineSpacingExtra="12sp"
-        android:paddingHorizontal="15dp"
-        android:paddingVertical="10dp"
-        android:text="@string/main_menu_employee_option"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_coffee_option" />
 </androidx.constraintlayout.widget.ConstraintLayout>

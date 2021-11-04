@@ -23,6 +23,7 @@ public class CoffeeListActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee_list);
+        setTitle("Lista de cafés");
 
         listView = findViewById(R.id.listView_coffee);
         emptyListTextView = findViewById(R.id.textView_list_coffee_empty_message);

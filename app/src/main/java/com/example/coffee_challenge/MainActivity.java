@@ -4,26 +4,40 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private ListView listView;
+    private String[] menuOptions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        attachMenuListeners();
+        menuOptions = new String[] {
+                getString(R.string.main_menu_coffee_option),
+                getString(R.string.main_menu_employee_option)
+        };
+
+        configListView();
     }
 
-    View.OnClickListener onItemClick = (e) -> {
-        int itemId = e.getId();
-        Intent intent = null;
-        if(itemId == R.id.textView_coffee_option) {
-            intent = new Intent(this, CoffeeListActivity.class);
+    private void configListView() {
+        listView = findViewById(R.id.listView_main_menu);
+        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, menuOptions);
+        listView.setAdapter(listViewAdapter);
+        listView.setOnItemClickListener(onMenuItemClick);
+    }
 
-        } else if (itemId == R.id.textView_employees_option) {
+    AdapterView.OnItemClickListener onMenuItemClick = (parent, view, position, id) -> {
+        Intent intent = null;
+        if(position == 0) {
+            intent = new Intent(this, CoffeeListActivity.class);
+        } else if (position == 1) {
             Toast.makeText(this, "Clickou no funcionário, não implementado", Toast.LENGTH_SHORT).show();
         }
 
@@ -32,8 +46,4 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    public void attachMenuListeners() {
-        findViewById(R.id.textView_coffee_option).setOnClickListener(onItemClick);
-        findViewById(R.id.textView_employees_option).setOnClickListener(onItemClick);
-    }
 }
