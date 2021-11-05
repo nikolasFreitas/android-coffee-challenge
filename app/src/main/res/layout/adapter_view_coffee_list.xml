@@ -67,6 +67,7 @@
         android:adjustViewBounds="true"
         android:cropToPadding="true"
         android:scaleType="centerInside"
+        android:clickable="true"
         app:layout_constraintBaseline_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/textView_coffee_roasting"
         app:layout_constraintEnd_toEndOf="parent"
