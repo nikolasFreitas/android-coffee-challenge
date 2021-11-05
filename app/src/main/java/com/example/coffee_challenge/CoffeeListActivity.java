@@ -53,8 +53,10 @@ public class CoffeeListActivity extends AppCompatActivity {
     }
 
     public void configureListView() {
-        ArrayAdapter<Coffee> adapterView = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, coffeeDAO.getAll());
-        listView.setAdapter(adapterView);
+        CoffeeListAdapter coffeListAdapter = new CoffeeListAdapter(this, R.layout.adapter_view_coffee_list, coffeeDAO.getAll());
+        listView.setAdapter(coffeListAdapter);
+//        ArrayAdapter<Coffee> adapterView = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, coffeeDAO.getAll());
+//        listView.setAdapter(adapterView);
     }
 
     public void configureListeners() {

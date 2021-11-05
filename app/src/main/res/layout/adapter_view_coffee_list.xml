@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="8dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_coffee_roasting_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_coffee_name"
+        app:srcCompat="@drawable/ic_coffee_mug" />
+
+
+    <TextView
+        android:id="@+id/textView_coffee_name"
+        android:layout_width="288dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="1dp"
+        android:gravity="center"
+        android:text="@string/coffee_name"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView_edit_coffee"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_coffee_roasting"
+        android:layout_width="188dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:text="@string/input_roast_level"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView_edit_coffee"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintTop_toBottomOf="@+id/textView_coffee_name" />
+
+    <TextView
+        android:id="@+id/textView_coffee_roasting_title"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@string/roast_title"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView_coffee_roasting"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/textView_coffee_name" />
+
+    <ImageView
+        android:id="@+id/imageView_edit_coffee"
+        android:layout_width="46dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        android:scaleType="centerInside"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_coffee_roasting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_coffee_name"
+        app:srcCompat="@drawable/ic_edit_foreground" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

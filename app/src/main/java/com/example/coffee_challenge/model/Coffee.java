@@ -8,6 +8,12 @@ public class Coffee {
     public Coffee() {
     }
 
+    public Coffee(String name, int roastingLevel, int id) {
+        this.name = name;
+        this.roastingLevel = roastingLevel;
+        this.id = id;
+    }
+
     public Coffee(String name, int roastingLevel) {
         this.name = name;
         this.roastingLevel = roastingLevel;
