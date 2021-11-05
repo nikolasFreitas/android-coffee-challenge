@@ -8,5 +8,7 @@
     <string name="empty_list_coffee">Lista vazia adicione um café</string>
     <string name="input_name">nome</string>
     <string name="input_roast_level">nível de torreifação</string>
+    <string name="roast_title">Torra:</string>
+    <string name="coffee_name">coffee name</string>
 
 </resources>
