@@ -3,7 +3,6 @@ package com.example.coffee_challenge;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -11,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.coffee_challenge.dao.CoffeeDAO;
-import com.example.coffee_challenge.model.Coffee;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class CoffeeListActivity extends AppCompatActivity {
@@ -30,7 +28,7 @@ public class CoffeeListActivity extends AppCompatActivity {
 
         viewContentToggle();
         configureListView();
-        configureListeners();
+        configureAddCoffee();
     }
 
     @Override
@@ -45,21 +43,18 @@ public class CoffeeListActivity extends AppCompatActivity {
             emptyListTextView.setVisibility(View.VISIBLE);
             listView.setVisibility(View.GONE);
         } else {
-            if (listView.getVisibility() == View.GONE) {
-                emptyListTextView.setVisibility(View.GONE);
-                listView.setVisibility(View.VISIBLE);
-            }
+            emptyListTextView.setVisibility(View.GONE);
+            listView.setVisibility(View.VISIBLE);
         }
     }
 
     public void configureListView() {
         CoffeeListAdapter coffeListAdapter = new CoffeeListAdapter(this, R.layout.adapter_view_coffee_list, coffeeDAO.getAll());
+        coffeListAdapter.onAdapterUpdate(this::viewContentToggle);
         listView.setAdapter(coffeListAdapter);
-//        ArrayAdapter<Coffee> adapterView = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, coffeeDAO.getAll());
-//        listView.setAdapter(adapterView);
     }
 
-    public void configureListeners() {
+    public void configureAddCoffee() {
         FloatingActionButton floatingActionButton = findViewById(R.id.floatingActionButton_add_coffee);
         floatingActionButton.setOnClickListener(view -> {
             Intent intent = new Intent(this, AddCoffeeActivity.class);

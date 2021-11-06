@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.Set;
 
 public class CoffeeDAO {
-    final private static Set<Coffee> coffeeList = new HashSet<>();
+    final private static List<Coffee> coffeeList = new ArrayList<>();
     private static int nextId = 0;
 
     public int add(Coffee coffee) {
@@ -27,9 +27,15 @@ public class CoffeeDAO {
     public boolean remove(Coffee coffee) {
         return coffeeList.remove(coffee);
     }
+    public boolean remove(int id) {
+        Optional<Coffee> coffeeToRemoveOpt = coffeeList.stream().filter(coffee -> coffee.id == id).findFirst();
+        coffeeToRemoveOpt.ifPresent(coffeeList::remove);
+
+        return coffeeToRemoveOpt.isPresent();
+    }
 
     public List<Coffee> getAll() {
-        return new ArrayList<>(coffeeList);
+        return coffeeList;
     }
 
     public boolean isEmpty() {
