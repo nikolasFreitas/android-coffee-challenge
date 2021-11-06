@@ -2,10 +2,12 @@ package com.example.coffee_challenge;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +26,8 @@ public class CoffeeListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_coffee_list);
         setTitle("Lista de cafés");
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         listView = findViewById(R.id.listView_coffee);
         emptyListTextView = findViewById(R.id.textView_list_coffee_empty_message);
 
@@ -38,6 +42,16 @@ public class CoffeeListActivity extends AppCompatActivity {
         viewContentToggle();
         configureListView();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     public void viewContentToggle() {
         if (coffeeDAO.isEmpty()) {

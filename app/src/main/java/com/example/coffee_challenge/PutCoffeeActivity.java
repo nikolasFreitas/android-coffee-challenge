@@ -2,13 +2,16 @@ package com.example.coffee_challenge;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.coffee_challenge.dao.CoffeeDAO;
 import com.example.coffee_challenge.model.Coffee;
@@ -30,12 +33,23 @@ public class PutCoffeeActivity extends AppCompatActivity {
         Intent originIntent = getIntent();
         this.coffeeId = originIntent.getIntExtra("coffee_id", -1);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);        
+
         textEditName = ((TextInputLayout) findViewById(R.id.add_coffee_textInputLayout_name)).getEditText();
         textEditRoastLevel = ((TextInputLayout) findViewById(R.id.add_coffee_textInputLayout_roastingLevel)).getEditText();
 
         configTitle();
         configSaveButton();
         setTextFieldData();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void configTitle() {
