@@ -18,8 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CoffeeListActivity"/>
-        <activity android:name=".AddCoffeeActivity"/>
+        <activity android:name=".CoffeeListActivity" />
+        <activity android:name=".PutCoffeeActivity" />
     </application>
 
 </manifest>

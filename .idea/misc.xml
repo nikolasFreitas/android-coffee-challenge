@@ -13,8 +13,10 @@
         <entry key="app/src/main/res/drawable/ic_pencil.xml" value="0.22291666666666668" />
         <entry key="app/src/main/res/layout/activity_add_coffee.xml" value="0.2735294117647059" />
         <entry key="app/src/main/res/layout/activity_coffee_list.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_edit_coffee.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20625" />
         <entry key="app/src/main/res/layout/adapter_view_coffee_list.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/content_coffee_edit.xml" value="0.35625" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22291666666666668" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.22291666666666668" />
       </map>

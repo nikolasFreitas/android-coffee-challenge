@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.coffee_challenge.dao.CoffeeDAO;
+import com.example.coffee_challenge.model.Coffee;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class CoffeeListActivity extends AppCompatActivity {
@@ -52,12 +53,19 @@ public class CoffeeListActivity extends AppCompatActivity {
         CoffeeListAdapter coffeListAdapter = new CoffeeListAdapter(this, R.layout.adapter_view_coffee_list, coffeeDAO.getAll());
         coffeListAdapter.onAdapterUpdate(this::viewContentToggle);
         listView.setAdapter(coffeListAdapter);
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Coffee coffee = (Coffee) parent.getItemAtPosition(position);
+            Intent intent = new Intent(this, PutCoffeeActivity.class);
+            intent.putExtra("coffee_id", coffee.id);
+
+            startActivity(intent);
+        });
     }
 
     public void configureAddCoffee() {
         FloatingActionButton floatingActionButton = findViewById(R.id.floatingActionButton_add_coffee);
         floatingActionButton.setOnClickListener(view -> {
-            Intent intent = new Intent(this, AddCoffeeActivity.class);
+            Intent intent = new Intent(this, PutCoffeeActivity.class);
             startActivity(intent);
         });
     }

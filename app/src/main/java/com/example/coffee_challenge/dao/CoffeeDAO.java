@@ -41,4 +41,13 @@ public class CoffeeDAO {
     public boolean isEmpty() {
         return coffeeList.isEmpty();
     }
+
+    public void update(Coffee coffee) {
+        Optional<Coffee> coffeeToUpdateOpt = coffeeList.stream().filter(savedCoffee -> savedCoffee.id == coffee.id).findFirst();
+        if (coffeeToUpdateOpt.isPresent()) {
+            Coffee coffeeToUpdate = coffeeToUpdateOpt.get();
+            coffeeToUpdate.name = coffee.name;
+            coffeeToUpdate.roastingLevel = coffee.roastingLevel;
+        }
+    }
 }

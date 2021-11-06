@@ -1,6 +1,9 @@
 package com.example.coffee_challenge.model;
 
-public class Coffee {
+import java.io.Serializable;
+
+public class Coffee implements Serializable {
+
     public int id;
     public String name;
     public int roastingLevel;

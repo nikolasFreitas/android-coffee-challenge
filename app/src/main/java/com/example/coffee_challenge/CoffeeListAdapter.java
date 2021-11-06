@@ -47,6 +47,7 @@ public class CoffeeListAdapter extends ArrayAdapter<Coffee> {
         configTextView(convertView, coffee);
         configureEditCoffeeButton(convertView, coffee);
 
+
         return convertView;
     }
 
