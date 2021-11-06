@@ -57,8 +57,12 @@ public class CoffeeListAdapter extends ArrayAdapter<Coffee> {
         textViewCoffeName.setText(coffee.name);
         StringBuilder roastingRate = new StringBuilder();
         final int COFFEE_UNICODE = 0X1F375;
-        for (int note = 1; (note <= 5 && note <= coffee.roastingLevel); note++) {
+        final int MAX_COFFEE_ICON = 5;
+        for (int note = 1; (note <= MAX_COFFEE_ICON && note <= coffee.roastingLevel); note++) {
             roastingRate.append(new String(Character.toChars(COFFEE_UNICODE)));
+        }
+        if (coffee.roastingLevel > MAX_COFFEE_ICON) {
+            roastingRate.append(" ...");
         }
         textViewCoffeRoast.setText(roastingRate);
     }
