@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/secondary_variant"
-    tools:context=".PutCoffeeActivity">
+    tools:context=".PutEmployeeActivity">
 
     <ImageView
-        android:id="@+id/imageView_banner_add_coffee"
+        android:id="@+id/imageView_banner_add_employee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
@@ -18,50 +18,67 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/coffee_banner_internal" />
+        app:srcCompat="@drawable/employee_banner_add" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/add_coffee_textInputLayout_name"
+        android:id="@+id/add_employee_textInputLayout_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:paddingHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_banner_add_coffee">
+        app:layout_constraintTop_toBottomOf="@+id/imageView_banner_add_employee">
 
         <com.google.android.material.textfield.TextInputEditText
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/input_name" />
+            android:hint="@string/input_employee_name" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/add_coffee_textInputLayout_roastingLevel"
+        android:id="@+id/add_employee_textInputLayout_birthdate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:paddingHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_coffee_textInputLayout_name">
+        app:layout_constraintTop_toBottomOf="@+id/add_employee_textInputLayout_name">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:inputType="number"
+            android:inputType="date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/input_roast_level" />
+            android:hint="@string/input_employee_birthdate" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_employee_textInputLayout_admission"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_employee_textInputLayout_birthdate">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:inputType="date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_employee_admission_date" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button_save_coffee"
+        android:id="@+id/button_save_employee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_coffee_textInputLayout_roastingLevel"
+        app:layout_constraintTop_toBottomOf="@+id/add_employee_textInputLayout_birthdate"
         app:layout_constraintVertical_bias="0.79" />
 </androidx.constraintlayout.widget.ConstraintLayout>

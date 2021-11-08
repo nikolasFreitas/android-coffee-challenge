@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".CoffeeListActivity" />
         <activity android:name=".PutCoffeeActivity" />
+        <activity android:name=".EmployeeListActivity"/>
+        <activity android:name=".PutEmployeeActivity"/>
     </application>
 
 </manifest>

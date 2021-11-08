@@ -1,14 +1,29 @@
 <resources>
     <string name="app_name">Coffee Experiment</string>
 
+    <!--  Menu -->
     <string name="main_menu_coffee_option">Lista de cafés</string>
     <string name="main_menu_employee_option">Lista de funcionários</string>
-    <string name="add_coffee">Add coffee</string>
-    <string name="content_description_add_new_coffe">add new coffe</string>
-    <string name="empty_list_coffee">Lista vazia adicione um café</string>
+
+    <!-- Coffee list   -->
+    <string name="add_coffee">adicionar café</string>
+    <string name="content_description_add_new_coffee">baner do café</string>
+    <string name="empty_list_coffee">Lista vazia, adicione um café</string>
+    <!--  Add coffee form  -->
     <string name="input_name">nome</string>
     <string name="input_roast_level">nível de torreifação</string>
     <string name="roast_title">Torra:</string>
     <string name="coffee_name">coffee name</string>
+
+    <!-- Employee list   -->
+    <string name="employee_name">Nome</string>
+    <string name="employee_birthdate">Nascimento</string>
+    <string name="employee_admission_date">Admissão</string>
+    <string name="empty_list_employee">Lista vazia, adicione um funcionário</string>
+
+    <!-- Add employee form  -->
+    <string name="input_employee_name">Nome do funcionário</string>
+    <string name="input_employee_birthdate">Data de nascimento</string>
+    <string name="input_employee_admission_date">Data do início</string>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.example.coffee_challenge.dao;
 
 import com.example.coffee_challenge.model.Coffee;
+import com.example.coffee_challenge.model.Employee;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -8,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-public class CoffeeDAO {
+public class CoffeeDAO implements Dao<Coffee> {
     final private static List<Coffee> coffeeList = new ArrayList<>();
     private static int nextId = 0;
 

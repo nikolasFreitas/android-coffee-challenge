@@ -103,7 +103,7 @@ public class PutCoffeeActivity extends AppCompatActivity {
         if (isFormValid()) {
             String nameInputValue = textEditName.getText().toString();
             Integer roastLevelInputValue = Integer.parseInt(textEditRoastLevel.getText().toString());
-            Coffee coffee = new Coffee(nameInputValue, roastLevelInputValue);
+            Coffee coffee = new Coffee(nameInputValue, roastLevelInputValue, coffeeId);
             coffeeDAO.update(coffee);
 
             String toastMessage = "Café " +

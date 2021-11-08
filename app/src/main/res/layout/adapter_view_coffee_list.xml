@@ -15,7 +15,7 @@
         android:adjustViewBounds="true"
         android:cropToPadding="true"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_coffee_roasting_title"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_coffee_roast_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView_coffee_name"
         app:srcCompat="@drawable/ic_coffee_mug" />
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_coffee_name" />
 
     <TextView
-        android:id="@+id/textView_coffee_roasting_title"
+        android:id="@+id/textView_coffee_roast_title"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"

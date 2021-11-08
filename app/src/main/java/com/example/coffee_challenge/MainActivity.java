@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         if(position == 0) {
             intent = new Intent(this, CoffeeListActivity.class);
         } else if (position == 1) {
-            Toast.makeText(this, "Clickou no funcionário, não implementado", Toast.LENGTH_SHORT).show();
+            intent = new Intent(this, EmployeeListActivity.class);
         }
 
         if (intent != null) {

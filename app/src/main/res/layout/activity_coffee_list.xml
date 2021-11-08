@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:contentDescription="@string/content_description_add_new_coffe"
+        android:contentDescription="@string/content_description_add_new_coffee"
         android:cropToPadding="false"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,9 +52,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/empty_list_coffee"
+        android:textAllCaps="true"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/listView_coffee"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_banner" />
+        app:layout_constraintTop_toTopOf="@+id/listView_coffee" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -72,7 +72,6 @@ public class CoffeeListAdapter extends ArrayAdapter<Coffee> {
         ImageView imageViewRemoveCoffee = view.findViewById(R.id.imageView_delete_coffee);
         imageViewRemoveCoffee.setOnClickListener(v -> {
             openDialog(coffee);
-//            Toast.makeText(context, "Edit ainda não implementado", Toast.LENGTH_SHORT).show();
         });
     }
 
@@ -85,6 +84,7 @@ public class CoffeeListAdapter extends ArrayAdapter<Coffee> {
                     if (coffeeDAO.remove(coffee.id)) {
                         notifyDataSetChanged();
                         setOnListUpdateCallBack.onUpdate();
+                        Toast.makeText(context, "Café "+ coffee.name + " deletado com sucesso", Toast.LENGTH_SHORT).show();
                         return;
                     }
 
