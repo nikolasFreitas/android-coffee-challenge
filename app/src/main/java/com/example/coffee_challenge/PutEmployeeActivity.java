@@ -1,5 +1,6 @@
 package com.example.coffee_challenge;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -19,6 +20,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Optional;
 
@@ -29,6 +31,7 @@ public class PutEmployeeActivity extends AppCompatActivity {
     private EditText textEditName;
     private EditText textEditBirthdate;
     private EditText textEditAdmissionDate;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,7 +49,44 @@ public class PutEmployeeActivity extends AppCompatActivity {
         configTitle();
         configSaveButton();
         setTextFieldData();
+        configDateDialog();
     }
+
+    private void configDateDialog() {
+        textEditBirthdate.setOnFocusChangeListener(dateDialogListener);
+        textEditAdmissionDate.setOnFocusChangeListener(dateDialogListener);
+    }
+
+    private View.OnFocusChangeListener dateDialogListener = (view, hasFocus) -> {
+        if (!hasFocus) {
+            return;
+        }
+        Calendar calendar = Calendar.getInstance();
+        EditText focusedView = (EditText) view;
+        DatePickerDialog datePicker = new DatePickerDialog(this,
+                setDateListener(focusedView),
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH));
+
+        datePicker.show();
+    };
+
+    private DatePickerDialog.OnDateSetListener setDateListener(EditText editText) {
+        return (DatePickerDialog.OnDateSetListener) (view, year, month, dayOfMonth) -> {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder
+                    .append(dayOfMonth)
+                    .append("/")
+                    .append(month)
+                    .append("/")
+                    .append(year);
+
+            editText.setText(stringBuilder);
+        };
+    };
+
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

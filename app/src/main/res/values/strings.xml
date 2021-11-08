@@ -25,5 +25,6 @@
     <string name="input_employee_name">Nome do funcionário</string>
     <string name="input_employee_birthdate">Data de nascimento</string>
     <string name="input_employee_admission_date">Data do início</string>
+    <string name="button_save">SALVAR</string>
 
 </resources>
